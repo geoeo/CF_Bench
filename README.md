@@ -23,7 +23,7 @@ Avg. Results (x100000000) | Matrix4x4 Alloc and Multiply
 *C#* | 5245.6 ms
 *F#* | 5259.2 ms
 
-Avg. Results (x100000000) | Matrix4x4 Allo
+Avg. Results (x100000000) | Matrix4x4 Alloc
 --- | --- 
 *C#* | 1586 ms
 *F#* | 1589 ms
