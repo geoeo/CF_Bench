@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using System.Timers;
 
-namespace runner
+namespace Benchmark
 {
     // Taken from Henzai
     public class FrameTimer
