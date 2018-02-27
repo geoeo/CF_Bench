@@ -11,7 +11,7 @@ Comparisons Between F# and C#
 ## 3D Vertecies (Structs)
 
             
-Results (x100000000) | Euclidian Distance 
+Avg. Results (x100000000) | Euclidian Distance 
 --- | --- 
 *C#* | 3045 ms
 *F#* | 2957 ms
