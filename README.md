@@ -13,5 +13,5 @@ Comparisons Between F# and C#
             
 Avg. Results (x100000000) | Euclidian Distance 
 --- | --- 
-*C#* | 3045 ms
-*F#* | 2957 ms
+*C#* | 4114.1 ms
+*F#* | 4052.9 ms
