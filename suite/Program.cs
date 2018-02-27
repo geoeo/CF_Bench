@@ -13,14 +13,16 @@ namespace Benchmark
             var timer = new FrameTimer(1.0);
 
             var eucliddianDistanceTest = new EuclidianDistanceTest();
+            var matrixTest = new MatrixMultiplyTest();
+            var matrixAllocTest = new MatrixAllocTest();
             Console.WriteLine("Start..");
             float avgTime = 0f;
 
-            avgTime = Experiment.performExperiment(eucliddianDistanceTest.RunCSharpTests,timer);
+            avgTime = Experiment.performExperiment(matrixAllocTest.RunCSharpTests,timer);
             Console.WriteLine($"C# Average Time: {avgTime} ms");
 
 
-            avgTime = Experiment.performExperiment(eucliddianDistanceTest.RunCSharpTests,timer);
+            avgTime = Experiment.performExperiment(matrixAllocTest.RunCSharpTests,timer);
             Console.WriteLine($"F# Average Time: {avgTime} ms");
             
         }

@@ -1,2 +1,4 @@
 {
+    "FSharp.logLanguageServiceRequests": "output",
+    "FSharp.logLanguageServiceRequestsOutputWindowLevel": "INFO"
 }
