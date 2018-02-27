@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 using System.Collections.Generic;
 
 namespace Benchmark
@@ -13,6 +14,56 @@ namespace Benchmark
             for(int i = 0; i < EXPERIMENT_COUNT; i++){
                 timer.Start();
                 test.Invoke();
+                timer.Stop();
+                results.Add(timer.prevFrameTicksInMilliseconds);
+            }
+
+            return averageResults(results);
+
+
+        }
+
+        public static float performExperimentActionMatrix(Action<Matrix4x4,Matrix4x4> test, FrameTimer timer){
+            Console.WriteLine("C# : Performing Experiment with Inputs");
+            var results = new List<float>();
+
+            Matrix4x4 m1 = new Matrix4x4(1.0f,0.0f,0.0f,0.0f,
+                                        0.0f,1.0f,0.0f,0.0f,
+                                        0.0f,0.0f,1.0f,0.0f,
+                                        0.0f,0.0f,0.0f,1.0f);
+            Matrix4x4 m2 = new Matrix4x4(1.0f,0.0f,0.0f,0.0f,
+                                        0.0f,1.0f,0.0f,0.0f,
+                                        0.0f,0.0f,1.0f,0.0f,
+                                        0.0f,0.0f,0.0f,1.0f);
+
+            for(int i = 0; i < EXPERIMENT_COUNT; i++){
+                timer.Start();
+                test.Invoke(m1,m2);
+                timer.Stop();
+                results.Add(timer.prevFrameTicksInMilliseconds);
+            }
+
+            return averageResults(results);
+
+
+        }
+
+        public static float performExperimentActionMatrix(Action<FSharpBench.Numerics.Matrix4x4,FSharpBench.Numerics.Matrix4x4> test, FrameTimer timer){
+            Console.WriteLine("F# : Performing Experiment with Inputs");
+            var results = new List<float>();
+
+            var m1 = new FSharpBench.Numerics.Matrix4x4(1.0f,0.0f,0.0f,0.0f,
+                                        0.0f,1.0f,0.0f,0.0f,
+                                        0.0f,0.0f,1.0f,0.0f,
+                                        0.0f,0.0f,0.0f,1.0f);
+            var m2 = new FSharpBench.Numerics.Matrix4x4(1.0f,0.0f,0.0f,0.0f,
+                                        0.0f,1.0f,0.0f,0.0f,
+                                        0.0f,0.0f,1.0f,0.0f,
+                                        0.0f,0.0f,0.0f,1.0f);
+
+            for(int i = 0; i < EXPERIMENT_COUNT; i++){
+                timer.Start();
+                test.Invoke(m1,m2);
                 timer.Stop();
                 results.Add(timer.prevFrameTicksInMilliseconds);
             }

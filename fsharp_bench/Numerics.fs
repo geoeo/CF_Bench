@@ -15,7 +15,7 @@ module Numerics =
             new(x,y,z) = { x = x; y = y; z = z}
         end
     type Matrix4x4 = 
-        struct
+        //struct
             val M11:float
             val M12:float
             val M13:float
@@ -42,7 +42,7 @@ module Numerics =
                     M31 = m31; M32 = m32; M33 = m33; M34 = m34;
                     M41 = m41; M42 = m42; M43 = m43; M44 = m44;
                 }
-        end
+        //end
             
 
     let euclidianDistance (v1 : Vertex3D) (v2 : Vertex3D) =

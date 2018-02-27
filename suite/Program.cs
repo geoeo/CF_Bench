@@ -18,11 +18,11 @@ namespace Benchmark
             Console.WriteLine("Start..");
             float avgTime = 0f;
 
-            avgTime = Experiment.performExperiment(matrixAllocTest.RunCSharpTests,timer);
+            avgTime = Experiment.performExperimentActionMatrix(matrixTest.RunCSharpTests,timer);
             Console.WriteLine($"C# Average Time: {avgTime} ms");
 
 
-            avgTime = Experiment.performExperiment(matrixAllocTest.RunCSharpTests,timer);
+            avgTime = Experiment.performExperimentActionMatrix(matrixTest.RunFSharpTests,timer);
             Console.WriteLine($"F# Average Time: {avgTime} ms");
             
         }
