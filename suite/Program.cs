@@ -22,7 +22,7 @@ namespace Benchmark
             Console.WriteLine($"C# Average Time: {avgTime} ms");
 
 
-            avgTime = Experiment.performExperimentActionMatrix(matrixTest.RunFSharpTests,timer);
+            avgTime = Experiment.performExperimentActionMatrixFSharpTypesbyRef(matrixTest,timer);
             Console.WriteLine($"F# Average Time: {avgTime} ms");
             
         }
