@@ -16,24 +16,32 @@ Avg. Results (x100000000) | Euclidian Distance
 *C#* | 4114.1 ms
 *F#* | 4052.9 ms
 
+## System.Numerics.Vector3 
+
+Avg. Results (x100000000) | Euclidian Distance 
+--- | --- 
+*C#* | 3395.6 ms
+*F#* | 2820.6 ms
+
 ## Matrix4x4 (Structs)
 
-Avg. Results (x100000000) | Matrix4x4 Alloc and Multiply 
+Avg. Results (x100000000) | Pass Matrix4x4 into function
 --- | --- 
-*C#* | 5245.6 ms
-*F#* | 5259.2 ms
+*C#* | 844 ms
+*F#* | 844.3 ms
 
 Avg. Results (x100000000) | Matrix4x4 Alloc
 --- | --- 
 *C#* | 1581.2 ms
 *F#* | 1579.2 ms
 
+Avg. Results (x100000000) | Matrix4x4 Alloc and Multiply 
+--- | --- 
+*C#* | 5245.6 ms
+*F#* | 5259.2 ms
+
 Avg. Results (x100000000) | Matrix4x4 Multiply - Matrix passed by value into method (C# and F#)
 --- | --- 
-*C#* | 3749.9 ms
-*F#* | 5896.6.4 ms (!)
+*C#* | 4843.4 ms
+*F#* | 4145.3 ms 
 
-Avg. Results (x100000000) | Matrix4x4 Multiply - F# passed by ref into method
---- | --- 
-*C#* | 3846.1 ms
-*F#* | 6216.3 ms (!)

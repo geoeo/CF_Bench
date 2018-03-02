@@ -16,7 +16,7 @@ module Numerics =
             new(x,y,z) = { x = x; y = y; z = z}
         end
     type Matrix4x4 = 
-        //struct
+        struct
             val M11:float32
             val M12:float32
             val M13:float32
@@ -50,11 +50,19 @@ module Numerics =
                     M31 = m.M31; M32 = m.M32; M33 = m.M33; M34 = m.M34;
                     M41 = m.M41; M42 = m.M42; M43 = m.M43; M44 = m.M44;
                 }
-        //end
+        end
             
 
     let euclidianDistance (v1 : Vertex3D) (v2 : Vertex3D) =
         sqrt(Math.Pow(v1.x - v2.x,2.0) + Math.Pow(v1.y - v2.y,2.0) + Math.Pow(v1.z-v2.z,2.0))
+
+    let standardEuclidianDistance v1 v2 =
+        System.Numerics.Vector3.Distance(v1,v2)
+
+    let empty v1 v2 =
+       0.0
+
+
 
     // https://github.com/dotnet/corefx/blob/221950b31c1057b040670936519ddbc13f893062/src/System.Numerics.Vectors/src/System/Numerics/Matrix4x4.cs#L118
     let matrixMultiply (m1 :Matrix4x4) (m2 : Matrix4x4) = 

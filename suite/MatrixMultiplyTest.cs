@@ -41,7 +41,9 @@ namespace Benchmark
         }
 
         override protected void TestCSharp(Matrix4x4 m1, Matrix4x4 m2){
-            var cshrp_res = m1*m2;
+            // var cshrp_res = m1*m2;
+            var cshrp_res = CSharpBench.Numerics.StandardMult(m1,m2);
+            // var cshrp_res = CSharpBench.Numerics.Empty(m1,m2);
         }
 
         override protected void TestFSharpByRef(ref Matrix4x4 m1, ref Matrix4x4 m2){
@@ -68,6 +70,7 @@ namespace Benchmark
 
         override protected void TestFSharp(Matrix4x4 m1, Matrix4x4 m2){
             var fsharp_res = FSharpBench.Numerics.standardMutipy(m1,m2);
+            // var fsharp_res = FSharpBench.Numerics.empty(m1,m2);
         }
 
     }

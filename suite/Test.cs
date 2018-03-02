@@ -35,6 +35,20 @@ namespace Benchmark
             
         }
 
+        public void RunCSharpTests(Vector3 m1, Vector3 m2){
+
+            for(int i = 0; i < RUN_AMOUNT; i++)
+                TestCSharp(m1,m2);
+            
+        }
+
+        public void RunFSharpTests(Vector3 m1 ,Vector3 m2){
+
+            for(int i = 0; i < RUN_AMOUNT; i++)
+                TestFSharp( m1, m2);
+            
+        }
+
         public void RunFSharpTestsByRef(ref Matrix4x4 m1 ,ref Matrix4x4 m2){
 
             for(int i = 0; i < RUN_AMOUNT; i++)
@@ -60,10 +74,14 @@ namespace Benchmark
         protected abstract void TestCSharp();
         protected abstract void TestFSharp();
 
+        protected virtual void TestFSharp(Vector3 m1, Vector3 m2){}
+        protected virtual void TestCSharp(Vector3 m1, Vector3 m2){}
+
+
+        protected virtual void TestFSharp(Matrix4x4 m1, Matrix4x4 m2){}
         protected virtual void TestCSharp(Matrix4x4 m1, Matrix4x4 m2){}
         protected virtual void TestFSharpByRef(ref Matrix4x4 m1, ref Matrix4x4 m2){}
         protected virtual void TestFSharpFSharpTypesByRef(ref FSharpBench.Numerics.Matrix4x4 m1, ref FSharpBench.Numerics.Matrix4x4 m2){}
-        protected virtual void TestFSharp(Matrix4x4 m1, Matrix4x4 m2){}
         protected virtual void TestFSharp(FSharpBench.Numerics.Matrix4x4 m1, FSharpBench.Numerics.Matrix4x4 m2){}
 
     }

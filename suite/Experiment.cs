@@ -23,6 +23,23 @@ namespace Benchmark
 
         }
 
+        public static float performExperimentVector3(Action<Vector3,Vector3> test, FrameTimer timer){
+            Console.WriteLine("Performing Experiment with Inputs Vector3");
+            var results = new List<float>();
+
+            var v1 = Vector3.One;
+            var v2 = 5*Vector3.One;
+
+            for(int i = 0; i < EXPERIMENT_COUNT; i++){
+                timer.Start();
+                test.Invoke(v1,v2);
+                timer.Stop();
+                results.Add(timer.prevFrameTicksInMilliseconds);
+            }
+
+            return averageResults(results);
+        }
+
         public static float performExperimentActionMatrix(Action<Matrix4x4,Matrix4x4> test, FrameTimer timer){
             Console.WriteLine("Performing Experiment with Inputs Matrix4x4");
             var results = new List<float>();
@@ -36,22 +53,14 @@ namespace Benchmark
                                         0.0f,0.0f,1.0f,0.0f,
                                         0.0f,0.0f,0.0f,1.0f);
 
-            var sw = new System.Diagnostics.Stopwatch();
-
             for(int i = 0; i < EXPERIMENT_COUNT; i++){
                 timer.Start();
-                // sw.Start();
                 test.Invoke(m1,m2);
                 timer.Stop();
-                // sw.Stop();
                 results.Add(timer.prevFrameTicksInMilliseconds);
-                // results.Add(sw.ElapsedMilliseconds);
-                // sw.Reset();
             }
 
             return averageResults(results);
-
-
         }
 
         public static float performExperimentActionMatrixbyRef(MatrixMultiplyTest test, FrameTimer timer){
