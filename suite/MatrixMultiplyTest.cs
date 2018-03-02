@@ -66,6 +66,10 @@ namespace Benchmark
             var fshrp_res = FSharpBench.Numerics.matrixMultiply(m1,m2);
         }
 
+        override protected void TestFSharp(Matrix4x4 m1, Matrix4x4 m2){
+            var fsharp_res = FSharpBench.Numerics.standardMutipy(m1,m2);
+        }
+
     }
     
 }

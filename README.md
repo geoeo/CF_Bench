@@ -31,7 +31,7 @@ Avg. Results (x100000000) | Matrix4x4 Alloc
 Avg. Results (x100000000) | Matrix4x4 Multiply - Matrix passed by value into method (C# and F#)
 --- | --- 
 *C#* | 3749.9 ms
-*F#* | 8612.4 ms (!)
+*F#* | 5896.6.4 ms (!)
 
 Avg. Results (x100000000) | Matrix4x4 Multiply - F# passed by ref into method
 --- | --- 

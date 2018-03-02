@@ -36,11 +36,17 @@ namespace Benchmark
                                         0.0f,0.0f,1.0f,0.0f,
                                         0.0f,0.0f,0.0f,1.0f);
 
+            var sw = new System.Diagnostics.Stopwatch();
+
             for(int i = 0; i < EXPERIMENT_COUNT; i++){
                 timer.Start();
+                // sw.Start();
                 test.Invoke(m1,m2);
                 timer.Stop();
+                // sw.Stop();
                 results.Add(timer.prevFrameTicksInMilliseconds);
+                // results.Add(sw.ElapsedMilliseconds);
+                // sw.Reset();
             }
 
             return averageResults(results);

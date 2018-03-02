@@ -1,6 +1,7 @@
 namespace FSharpBench
 
 open System
+open System.Numerics;
 
 module Numerics = 
     let add a b =
@@ -16,22 +17,22 @@ module Numerics =
         end
     type Matrix4x4 = 
         //struct
-            val M11:float
-            val M12:float
-            val M13:float
-            val M14:float
-            val M21:float
-            val M22:float
-            val M23:float
-            val M24:float
-            val M31:float
-            val M32:float
-            val M33:float
-            val M34:float
-            val M41:float
-            val M42:float
-            val M43:float
-            val M44:float
+            val M11:float32
+            val M12:float32
+            val M13:float32
+            val M14:float32
+            val M21:float32
+            val M22:float32
+            val M23:float32
+            val M24:float32
+            val M31:float32
+            val M32:float32
+            val M33:float32
+            val M34:float32
+            val M41:float32
+            val M42:float32
+            val M43:float32
+            val M44:float32
 
             new(m11,m12,m13,m14,
                 m21,m22,m23,m24,
@@ -41,6 +42,13 @@ module Numerics =
                     M21 = m21; M22 = m22; M23 = m23; M24 = m24;
                     M31 = m31; M32 = m32; M33 = m33; M34 = m34;
                     M41 = m41; M42 = m42; M43 = m43; M44 = m44;
+                }
+
+            new(m : System.Numerics.Matrix4x4) = {
+                    M11 = m.M11; M12 = m.M12; M13 = m.M13; M14 = m.M14;
+                    M21 = m.M21; M22 = m.M22; M23 = m.M23; M24 = m.M24;
+                    M31 = m.M31; M32 = m.M32; M33 = m.M33; M34 = m.M34;
+                    M41 = m.M41; M42 = m.M42; M43 = m.M43; M44 = m.M44;
                 }
         //end
             
@@ -75,6 +83,9 @@ module Numerics =
             m1.M41 * m2.M13 + m1.M42 * m2.M23 + m1.M43 * m2.M33 + m1.M44 * m2.M43,
             m1.M41 * m2.M14 + m1.M42 * m2.M24 + m1.M43 * m2.M34 + m1.M44 * m2.M44
         )
+
+    let standardMutipy (m1 : System.Numerics.Matrix4x4) (m2: System.Numerics.Matrix4x4) =
+        m1*m2
 
     
 
